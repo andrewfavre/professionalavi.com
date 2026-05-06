@@ -157,6 +157,47 @@ h1:where(.wp-block-heading).has-background,h2:where(.wp-block-heading).has-backg
 <link rel="icon" href="https://professionalavi.com/wp-content/uploads/2021/12/avi.icon_.png" sizes="192x192">
 <link rel="apple-touch-icon" href="https://professionalavi.com/wp-content/uploads/2021/12/avi.icon_.png">
 <meta name="msapplication-TileImage" content="https://professionalavi.com/wp-content/uploads/2021/12/avi.icon_.png">
+
+<style id="custom-cover-block-fix">
+    /* Container must be relative to anchor the background and flex to center vertically! */
+    .wp-block-cover {
+        position: relative !important;
+        overflow: hidden;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        flex-direction: column !important;
+    }
+
+    /* Forces the image to act as a background */
+    img.wp-block-cover__image-background {
+        position: absolute !important;
+        top: 0;
+        left: 0;
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        z-index: 0 !important;
+    }
+
+    /* Keeps the dark overlay above the image but forces it to be transparent! */
+    .wp-block-cover__background {
+        position: absolute !important;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1 !important;
+        opacity: 0.3 !important; /* Adjusted to 0.3 to match has-background-dim-30 */
+    }
+
+    /* Brings the header and H1 content to the front */
+    .wp-block-cover__inner-container {
+        position: relative !important;
+        z-index: 2 !important;
+        width: 100%;
+    }
+</style>
 </head>
 
 <body class="wp-singular page-template page-template-blank page page-id-5 wp-custom-logo wp-embed-responsive wp-theme-idea-flow wp-child-theme-beiged">
@@ -200,7 +241,7 @@ h1:where(.wp-block-heading).has-background,h2:where(.wp-block-heading).has-backg
 
 
 
-<p class="has-text-align-center">creative and innovative solutions custom designed to fit your needs</p>
+<p class="has-text-align-center has-contrast-light-color has-text-color">creative and innovative solutions custom designed to fit your needs</p>
 </div></div>
 </div>
 
