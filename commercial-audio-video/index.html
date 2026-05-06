@@ -140,6 +140,7 @@ ol,ul{box-sizing:border-box}:root :where(.wp-block-list.has-background){padding:
 		}
 /*# sourceURL=wp-block-template-skip-link-inline-css */
 </style>
+
 <link rel="stylesheet" id="superb-addons-patterns-css" href="https://professionalavi.com/wp-content/plugins/superb-blocks/assets/css/patterns.min.css?ver=3.7.1" media="all">
 <link rel="stylesheet" id="superb-addons-enhancements-css" href="https://professionalavi.com/wp-content/plugins/superb-blocks/assets/css/enhancements.min.css?ver=3.7.1" media="all">
 <link rel="https://api.w.org/" href="https://professionalavi.com/wp-json/"><link rel="alternate" title="JSON" type="application/json" href="https://professionalavi.com/wp-json/wp/v2/pages/666"><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://professionalavi.com/xmlrpc.php?rsd">
@@ -156,6 +157,42 @@ ol,ul{box-sizing:border-box}:root :where(.wp-block-list.has-background){padding:
 @font-face{font-family:Figtree;font-style:bold;font-weight:600;font-display:fallback;src:url('https://professionalavi.com/wp-content/themes/beiged/assets/fonts/figree/Figtree-VariableFont_wght.ttf') format('truetype');font-stretch:normal;}
 @font-face{font-family:Figtree;font-style:normal;font-weight:400;font-display:fallback;src:url('https://professionalavi.com/wp-content/themes/beiged/assets/fonts/figree/Figtree-VariableFont_wght.ttf') format('truetype');font-stretch:normal;}
 @font-face{font-family:Figtree;font-style:bold;font-weight:600;font-display:fallback;src:url('https://professionalavi.com/wp-content/themes/beiged/assets/fonts/figree/Figtree-VariableFont_wght.ttf') format('truetype');font-stretch:normal;}
+</style>
+<style id="custom-cover-block-fix">
+    /* Container must be relative to anchor the background */
+    .wp-block-cover {
+        position: relative !important;
+        overflow: hidden;
+    }
+
+    /* Forces the image to act as a background */
+    img.wp-block-cover__image-background {
+        position: absolute !important;
+        top: 0;
+        left: 0;
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        z-index: 0 !important;
+    }
+
+    /* Keeps the dark overlay above the image but forces it to be transparent! */
+    .wp-block-cover__background {
+        position: absolute !important;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1 !important;
+        opacity: 0.2 !important; /* This is the magic line that lets the image show through */
+    }
+
+    /* Brings the header and H1 content to the front */
+    .wp-block-cover__inner-container {
+        position: relative !important;
+        z-index: 2 !important;
+        width: 100%;
+    }
 </style>
 <link rel="icon" href="https://professionalavi.com/wp-content/uploads/2021/12/avi.icon_.png" sizes="32x32">
 <link rel="icon" href="https://professionalavi.com/wp-content/uploads/2021/12/avi.icon_.png" sizes="192x192">
