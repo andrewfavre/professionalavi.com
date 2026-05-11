@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Services – AVI – Audio Video Integrators</title>
+    <meta name="robots" content="max-image-preview:large">
+    
+    <link rel="stylesheet" href="/style.css"> 
+    
+    <link rel="icon" href="/images/avi.icon_.png" sizes="32x32">
+    <link rel="apple-touch-icon" href="/images/avi.icon_.png">
+</head>
+<body>
+
+    <header class="site-header header-overlay">
+        <div class="container header-inner">
+            <div class="logo">
+                <a href="/">
+                    <img src="/images/logo_edit.retina.png" alt="AVI – Audio Video Integrators" width="157" height="53">
+                </a>
+            </div>
+            
+            <nav class="main-nav" aria-label="Main Menu">
+                <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" id="mobile-menu-btn">
+                    <svg width="24" height="24" viewBox="0 0 24 24"><path d="M5 5v1.5h14V5H5zM5 12.8h14v-1.5H5v1.5zM5 19h14v-1.5H5V19z"></path></svg>
+                </button>
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/commercial-audio-video/">Commercial AV</a></li>
+                    <li><a href="/services/" aria-current="page" class="active">Services</a></li>
+                    <li><a href="/sonos/">Sonos</a></li>
+                    <li><a href="/contact-us/">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-action">
+                <a href="tel:3194302482" class="button phone-btn"><em>(319)</em> 430-2482</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero page-hero hero-full-width" style="background-image: url('/images/avi_services_banner-2048x775.jpg');">
+            <div class="hero-overlay-light"></div>
+            <div class="hero-content">
+                <h1>Services</h1>
+                <p>Creative and innovative solutions custom designed to fit your needs</p>
+            </div>
+        </section>
+
+        <section class="content-section container">
+            
+            <div class="content-row">
+                <div class="content-heading">
+                    <h2>Home Theater</h2>
+                </div>
+                <div class="content-body">
+                    <p>We will work closely with you and/or your designer and builder to design and implement the ultimate Home Theater solution. Home Theaters can be stand alone systems or be integrated into the home’s audio video distribution system.</p>
+                </div>
+            </div>
+
+            <div class="content-row reverse-mobile">
+                <div class="content-body">
+                    <p>Add versatility to your home by creating scenes for any task. With the press of a single button, dim the lights and lower the shades for dining or catching up with your family. Increase flexibility in a room by adding light control.</p>
+                    <p>Transform a harsh glare into a soft, pleasing light, and adjust the lights and shades to create the best setting for any activity. When entertaining, soften lights in spaces where guests are relaxing, and raise shades to enjoy the sunset.</p>
+                </div>
+                <div class="content-heading">
+                    <h2>Lighting Control</h2>
+                </div>
+            </div>
+
+            <div class="content-row">
+                <div class="content-heading">
+                    <h2>Shading Control</h2>
+                </div>
+                <div class="content-body">
+                    <p>Sivoia QS Triathlon is the most fashionable, flexible, and affordable motorized shading system available today. This battery-powered solution offers a 3-5 year battery life for easy installation and maintenance, perfect for retrofit applications.</p>
+                    <p>Available in new roller shade or insulating honeycomb styles, these shades have a wide variety of beautiful fabric colors and textures to meet the functional and aesthetic needs of any space.</p>
+                </div>
+            </div>
+
+            <div class="content-row reverse-mobile">
+                <div class="content-body">
+                    <p>Experience sound exactly as the artist intended. True High-Fidelity (Hi-Fi) audio transcends standard playback, utilizing premium components to deliver a pure, uncolored listening experience. By minimizing distortion and maintaining a precise frequency response across the entire spectrum of human hearing, our Hi-Fi systems reproduce the original studio recording with breathtaking clarity, depth, and realism.</p>
+                </div>
+                <div class="content-heading">
+                    <h2>High Fidelity Audio</h2>
+                </div>
+            </div>
+
+            <div class="content-row">
+                <div class="content-heading">
+                    <h2>Whole-home Audio &amp; Video</h2>
+                </div>
+                <div class="content-body">
+                    <p>Elevate your home entertainment with a seamlessly integrated whole-house audio and video system. Audio Video Integrators specializes in designing and installing custom, budget-friendly solutions tailored to your exact lifestyle. Experience high-fidelity sound and stunning video in any room, or every room simultaneously. All managed from a single, intuitive interface. Enjoy a clean, clutter-free aesthetic without the need for redundant equipment in every space.</p>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <div class="footer-logo">
+                <a href="/">
+                    <img src="/images/logo_edit.retina.png" alt="AVI – Audio Video Integrators" width="200" height="68" loading="lazy">
+                </a>
+            </div>
+            <div class="footer-copy">
+                <p>Copyright &copy; 2026 | <a href="/">AVI – Professional Audio Video Integrators</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const btn = document.getElementById('mobile-menu-btn');
+            const nav = document.getElementById('nav-links');
+            
+            if (btn && nav) {
+                btn.addEventListener('click', () => {
+                    const expanded = btn.getAttribute('aria-expanded') === 'true';
+                    btn.setAttribute('aria-expanded', !expanded);
+                    nav.classList.toggle('active');
+                });
+            }
+        });
+    </script>
+</body>
+</html>
