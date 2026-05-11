@@ -240,6 +240,7 @@ h3 { font-size: clamp(18px, 1.125rem + ((1vw - 3.2px) * 0.227), 20px); margin-bo
     text-align: center;
     display: flex;
     flex-direction: column;
+	align-items: center;
     gap: 1rem;
     padding: 0 2rem;
 }
