@@ -1,0 +1,326 @@
+/* ==========================================================================
+   CSS Variables (Derived from WordPress Configuration)
+   ========================================================================== */
+:root {
+    /* Colors */
+    --primary-color: #1f7cec;
+    --primary-hover: #3993ff;
+    --text-dark: #000000;
+    --text-light: #ffffff;
+    --text-gray: #64748b;
+    --bg-base: #f8fafc;
+    --bg-dark: #0a284b;
+    --border-color: #e2e8f0;
+    
+    /* Typography */
+    --font-primary: "Figtree", system-ui, -apple-system, sans-serif;
+    
+    /* Layout */
+    --container-width: 1400px;
+    --spacing-sm: 1rem;
+    --spacing-md: 2rem;
+    --spacing-lg: 4rem;
+}
+
+/* ==========================================================================
+   Base Reset & Typography
+   ========================================================================== */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-primary);
+    color: var(--text-dark);
+    background-color: var(--text-light);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.2s ease;
+}
+
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 var(--spacing-sm);
+}
+
+h1, h2, h3, h4 {
+    line-height: 1.2;
+    margin-bottom: var(--spacing-sm);
+    font-weight: 600;
+}
+
+h1 { font-size: clamp(2.5rem, 5vw, 4rem); }
+h2 { font-size: clamp(1.8rem, 3vw, 2.5rem); }
+h3 { font-size: clamp(1.2rem, 2vw, 1.5rem); }
+
+/* ==========================================================================
+   Buttons
+   ========================================================================== */
+.button {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    padding: 12px 28px;
+    border-radius: 50px;
+    font-weight: 600;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.button:hover {
+    background-color: var(--primary-hover);
+    color: var(--text-light);
+}
+
+.button.outline {
+    background-color: transparent;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+}
+
+.button.outline:hover {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+}
+
+/* ==========================================================================
+   Header & Navigation
+   ========================================================================== */
+.site-header {
+    background: var(--bg-base);
+    padding: var(--spacing-sm) 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo img {
+    max-width: 160px;
+}
+
+.main-nav .nav-links {
+    display: flex;
+    gap: var(--spacing-md);
+    align-items: center;
+}
+
+.main-nav .nav-links a {
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.main-nav .nav-links a:hover,
+.main-nav .nav-links a.active {
+    color: var(--text-dark);
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+}
+
+/* ==========================================================================
+   Hero Section
+   ========================================================================== */
+.hero {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: var(--spacing-lg) var(--spacing-sm);
+    border-radius: 20px;
+    margin: var(--spacing-sm) auto;
+    max-width: calc(100% - 2rem);
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(10, 40, 75, 0.6); /* Dark overlay for text readability */
+    border-radius: 20px;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 10;
+    color: var(--text-light);
+    max-width: 800px;
+}
+
+/* ==========================================================================
+   Services Overview (3 Columns)
+   ========================================================================== */
+.services-overview {
+    padding: var(--spacing-lg) 0;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-md);
+    align-items: start;
+}
+
+.services-list h3 { text-align: center; }
+.services-list ul { padding: 0 1rem; }
+.services-list li {
+    margin-bottom: 0.5rem;
+    position: relative;
+    padding-left: 1.5rem;
+}
+.services-list li::before {
+    content: "•";
+    color: var(--primary-color);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+.services-image img {
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.services-cta {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 0 2rem;
+}
+
+/* ==========================================================================
+   Testimonial
+   ========================================================================== */
+.testimonial {
+    padding: var(--spacing-lg) 0;
+    text-align: center;
+    max-width: 800px;
+}
+
+.testimonial-avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin: 0 auto var(--spacing-md);
+    object-fit: cover;
+}
+
+.testimonial blockquote {
+    font-size: clamp(1.1rem, 2vw, 1.5rem);
+    font-style: italic;
+    color: var(--text-dark);
+    margin-bottom: var(--spacing-md);
+}
+
+.testimonial cite {
+    display: block;
+    font-weight: 600;
+    color: var(--text-gray);
+    font-style: normal;
+    margin-bottom: 0.5rem;
+}
+
+.testimonial .stars {
+    display: flex;
+    justify-content: center;
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+.site-footer {
+    background-color: var(--bg-base);
+    padding: var(--spacing-lg) 0 var(--spacing-md);
+    text-align: center;
+}
+
+.footer-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.footer-logo img {
+    filter: grayscale(100%);
+    opacity: 0.8;
+    transition: opacity 0.3s;
+}
+
+.footer-logo img:hover {
+    opacity: 1;
+}
+
+.footer-copy {
+    color: var(--text-gray);
+    font-size: 0.9rem;
+}
+
+.footer-copy a {
+    color: var(--primary-color);
+}
+
+/* ==========================================================================
+   Responsive Utilities
+   ========================================================================== */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+    
+    .main-nav .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: var(--text-light);
+        padding: var(--spacing-md);
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    
+    .main-nav .nav-links.active {
+        display: flex;
+    }
+
+    .header-action {
+        display: none; /* Hides the phone button on small screens to save space, matching WP layout behavior */
+    }
+}
