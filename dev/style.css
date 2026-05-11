@@ -1,16 +1,21 @@
 /* ==========================================================================
-   CSS Variables (Derived from WordPress Configuration)
+   Web Fonts
+   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,400;0,600;0,700&display=swap');
+
+/* ==========================================================================
+   CSS Variables (Corrected to your active Beige/Black theme)
    ========================================================================== */
 :root {
     /* Colors */
-    --primary-color: #1f7cec;
-    --primary-hover: #3993ff;
+    --primary-color: #000000;      /* Black buttons/text */
+    --primary-hover: #3a3a3a;      /* Dark gray hover */
     --text-dark: #000000;
     --text-light: #ffffff;
-    --text-gray: #64748b;
-    --bg-base: #f8fafc;
-    --bg-dark: #0a284b;
-    --border-color: #e2e8f0;
+    --text-gray: #8b8883;          /* Warm gray for subtext */
+    --bg-base: #efebe5;            /* The main beige background */
+    --bg-featured: #f7f2ea;        /* Lighter beige for the header menu */
+    --border-color: #bfbbb6;
     
     /* Typography */
     --font-primary: "Figtree", system-ui, -apple-system, sans-serif;
@@ -34,7 +39,7 @@
 body {
     font-family: var(--font-primary);
     color: var(--text-dark);
-    background-color: var(--text-light);
+    background-color: var(--bg-base); /* Restores the beige background */
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
 }
@@ -107,7 +112,6 @@ h3 { font-size: clamp(1.2rem, 2vw, 1.5rem); }
 .site-header {
     background: var(--bg-base);
     padding: var(--spacing-sm) 0;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
     position: sticky;
     top: 0;
     z-index: 100;
@@ -118,6 +122,10 @@ h3 { font-size: clamp(1.2rem, 2vw, 1.5rem); }
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
+    background-color: var(--bg-featured); /* Applies the pill-shaped header color */
+    border-radius: 100px;
+    padding: 10px 25px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 3px 10px 0px;
 }
 
 .logo img {
@@ -137,7 +145,7 @@ h3 { font-size: clamp(1.2rem, 2vw, 1.5rem); }
 
 .main-nav .nav-links a:hover,
 .main-nav .nav-links a.active {
-    color: var(--text-dark);
+    color: var(--text-gray);
 }
 
 .menu-toggle {
@@ -169,7 +177,7 @@ h3 { font-size: clamp(1.2rem, 2vw, 1.5rem); }
 .hero-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(10, 40, 75, 0.6); /* Dark overlay for text readability */
+    background: rgba(10, 40, 75, 0.6); 
     border-radius: 20px;
 }
 
@@ -243,7 +251,6 @@ h3 { font-size: clamp(1.2rem, 2vw, 1.5rem); }
 
 .testimonial blockquote {
     font-size: clamp(1.1rem, 2vw, 1.5rem);
-    font-style: italic;
     color: var(--text-dark);
     margin-bottom: var(--spacing-md);
 }
@@ -265,7 +272,7 @@ h3 { font-size: clamp(1.2rem, 2vw, 1.5rem); }
    Footer
    ========================================================================== */
 .site-footer {
-    background-color: var(--bg-base);
+    background-color: var(--bg-featured);
     padding: var(--spacing-lg) 0 var(--spacing-md);
     text-align: center;
 }
@@ -290,10 +297,15 @@ h3 { font-size: clamp(1.2rem, 2vw, 1.5rem); }
 .footer-copy {
     color: var(--text-gray);
     font-size: 0.9rem;
+    background-color: var(--bg-base);
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
 }
 
 .footer-copy a {
-    color: var(--primary-color);
+    color: var(--text-gray);
+    font-weight: 600;
 }
 
 /* ==========================================================================
@@ -311,9 +323,10 @@ h3 { font-size: clamp(1.2rem, 2vw, 1.5rem); }
         position: absolute;
         top: 100%;
         left: 0;
-        background: var(--text-light);
+        background: var(--bg-featured);
         padding: var(--spacing-md);
         box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        border-radius: 0 0 20px 20px;
     }
     
     .main-nav .nav-links.active {
@@ -321,6 +334,6 @@ h3 { font-size: clamp(1.2rem, 2vw, 1.5rem); }
     }
 
     .header-action {
-        display: none; /* Hides the phone button on small screens to save space, matching WP layout behavior */
+        display: none; 
     }
 }
