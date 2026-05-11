@@ -118,6 +118,15 @@ h3 { font-size: clamp(18px, 1.125rem + ((1vw - 3.2px) * 0.227), 20px); margin-bo
     z-index: 100;
 }
 
+/* Overlay class forces the header to float transparently over images */
+.header-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: transparent; 
+}
+
 .header-inner {
     display: flex;
     justify-content: space-between;
@@ -183,13 +192,21 @@ h3 { font-size: clamp(18px, 1.125rem + ((1vw - 3.2px) * 0.227), 20px); margin-bo
 }
 
 .page-hero {
-    min-height: 400px; /* Internal pages have a shorter banner */
+    min-height: 400px; 
+}
+
+/* Forces the hero to edge-to-edge layout and adds padding for the floating header */
+.hero-full-width {
+    max-width: 100%;
+    border-radius: 0;
+    margin: 0;
+    padding-top: clamp(140px, 15vw, 200px); 
 }
 
 .hero-overlay-light {
     position: absolute;
     inset: 0;
-    background-color: rgba(0, 0, 0, 0.2); /* 20% dark overlay replicated from WP */
+    background-color: rgba(0, 0, 0, 0.2); 
     z-index: 0;
 }
 
