@@ -41,6 +41,7 @@ body {
     color: var(--text-dark);
     background-color: var(--bg-base); 
     line-height: 1.6;
+    font-size: 16px;
     -webkit-font-smoothing: antialiased;
 }
 
@@ -124,7 +125,8 @@ h3 { font-size: clamp(18px, 1.125rem + ((1vw - 3.2px) * 0.227), 20px); margin-bo
     flex-wrap: wrap;
     background-color: var(--bg-featured); 
     border-radius: 100px;
-    padding: 15px 25px;
+    /* FIX: Increased horizontal padding from 25px to 45px to restore logo spacing */
+    padding: 15px 45px; 
     box-shadow: rgba(0, 0, 0, 0.05) 0px 3px 10px 0px;
 }
 
@@ -141,6 +143,7 @@ h3 { font-size: clamp(18px, 1.125rem + ((1vw - 3.2px) * 0.227), 20px); margin-bo
 .main-nav .nav-links a {
     font-weight: 600;
     color: var(--primary-color);
+    font-size: 18px; /* Slightly larger to match original menu */
 }
 
 .main-nav .nav-links a:hover,
@@ -168,7 +171,7 @@ h3 { font-size: clamp(18px, 1.125rem + ((1vw - 3.2px) * 0.227), 20px); margin-bo
 .hero {
     background-size: cover;
     background-position: 55% 46%;
-    background-color: var(--primary-color); /* Acts as the dark contrast behind the image */
+    background-color: var(--primary-color); 
     border-radius: 20px;
     min-height: 600px;
     display: flex;
@@ -208,11 +211,15 @@ h3 { font-size: clamp(18px, 1.125rem + ((1vw - 3.2px) * 0.227), 20px); margin-bo
 
 .services-list h3 { text-align: center; }
 .services-list ul { padding: 0 1rem; }
+
+/* FIX: Restored font size to original WP medium clamping logic */
 .services-list li {
-    margin-bottom: 0.5rem;
+    font-size: clamp(18px, 1.125rem + 0.227vw, 20px);
+    margin-bottom: 0.8rem;
     position: relative;
     padding-left: 1.5rem;
 }
+
 .services-list li::before {
     content: "•";
     color: var(--primary-color);
@@ -221,7 +228,6 @@ h3 { font-size: clamp(18px, 1.125rem + ((1vw - 3.2px) * 0.227), 20px); margin-bo
     font-weight: bold;
 }
 
-/* FIX: Image set back to perfect circle matching "is-style-rounded" */
 .services-image img {
     border-radius: 50%;
     aspect-ratio: 1;
@@ -290,7 +296,6 @@ h3 { font-size: clamp(18px, 1.125rem + ((1vw - 3.2px) * 0.227), 20px); margin-bo
     gap: var(--spacing-sm);
 }
 
-/* FIX: Left aligns the logo to match original behavior */
 .footer-logo {
     display: flex;
     align-items: center;
@@ -308,7 +313,6 @@ h3 { font-size: clamp(18px, 1.125rem + ((1vw - 3.2px) * 0.227), 20px); margin-bo
     opacity: 1;
 }
 
-/* FIX: Full width copyright box with lighter background */
 .footer-copy {
     background-color: var(--bg-base);
     padding: 10px;
